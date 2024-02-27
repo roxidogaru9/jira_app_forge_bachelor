@@ -1,0 +1,22 @@
+modules:
+  jira:issuePanel:
+    - key: hello-world-app-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Forge app for Roxana
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  id: ari:cloud:ecosystem::app/15946a22-d78d-42da-855a-b94a18c43056
+  runtime:
+    name: nodejs18.x
+permissions:
+  scopes:
+    - read:jira-work
